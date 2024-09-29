@@ -1,2 +1,2 @@
 # darukshock.github.io
-My personal tools
+My personal tools, mainly for datapack development.
