@@ -1,5 +1,8 @@
 
 body{
     background-color: rgb(41, 39, 38);
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    max-width: 800px;      /* Limit width so text isn't full screen */
+    margin: auto;          /* Center the text block */
+    padding: 20px;         /* Add space inside the body */
 }
