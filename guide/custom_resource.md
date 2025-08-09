@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Custom resources in Vanilla Minecraft
 ## Quick Intro
 Minecraft **datapacks** and **resource packs** are **data-driven**, meaning a big part of the game is not **hardcoded**.
