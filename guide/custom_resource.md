@@ -1,6 +1,6 @@
----
+<!-- ---
 layout: default
----
+--- -->
 
 # Custom resources in Vanilla Minecraft
 ## Quick Intro
