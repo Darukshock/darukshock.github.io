@@ -1,5 +1,8 @@
 title: Darukshock's place
 description: Speed up datapack creation on darukshock.github.io
-theme: minima
+# theme: minima
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
 minima:
   skin: dark
