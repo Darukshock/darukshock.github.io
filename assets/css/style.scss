@@ -6,3 +6,13 @@ body{
     margin: auto;
     padding: 20px
 }
+
+a {
+  color: #80cbc4;          /* Soft turquoise for readability */
+  text-decoration: underline; /* Make it clearly clickable */
+}
+
+a:hover {
+  color: #4dd0e1;          /* Slightly brighter on hover */
+  text-decoration: none;   /* Optional: remove underline on hover */
+}
