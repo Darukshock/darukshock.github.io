@@ -18,6 +18,19 @@ Always wanting to make my code as extensible as possible, I went on a journey to
     - Syntax highlighting: [Spyglass](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) 
     - Custom folder & file icons : [Datapack Icons](https://marketplace.visualstudio.com/items?itemName=SuperAnt.mc-dp-icons)
 
+## Beet Plugin
+- extend namespace
+- iterate through items
+## Spyglass
+- `spyglass.json`
+```json
+{
+  "customResources": {
+    "darukshock.my_armor": "my_armor"
+  }
+}
+```
+- mcdoc
 
 
 ## Custom File & Folder icons
@@ -40,7 +53,7 @@ Now, let's tell the extension when to display this SVG.
 - Head to `fileicons\mc-dp-icon-theme-default.json`
 - In the `iconDefinitions` field, add `"<NAME>_file": {"iconPath": "./imgs/<NAME>_file.svg"},`
 - In the `fileExtensions` field, add `"<NAME>/json": "<NAME>_file",`
-<br>You can follow these steps again to customize the icon of your custom resource folder.
+<br>You can follow these steps again to customize the icon of your resource folder.
 <br>Your theme file should look like this now:
 
 ```json
