@@ -17,3 +17,61 @@ Always wanting to make my code as extensible as possible, I went on a journey to
 - (Optional) [Visual Studio Code](https://code.visualstudio.com/) for your custom syntax highlighting and folder icons
     - Syntax highlighting: [Spyglass](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) 
     - Custom folder & file icons : [Datapack Icons](https://marketplace.visualstudio.com/items?itemName=SuperAnt.mc-dp-icons)
+
+
+
+## Custom File & Folder icons
+- Install the [Datapack Icons](https://marketplace.visualstudio.com/items?itemName=SuperAnt.mc-dp-icons) extension.
+- Go to the extensions  folder (e.g run `Extensions: Open Extensions Folder` in the VS code commands, or manually open `C:\Users\<USER_NAME>\.vscode\extensions`)
+- Navigate to `superant.mc-dp-icons-4.0.2\fileicons\`
+### Create new icons
+We're now going to create the SVG files that the extension will display allongside our folder names. I'll be using [GIMP](https://www.gimp.org/downloads/)
+- Create a 32x32 pixel art (Consider taking inspiration from the [assets repo](https://github.com/FuncFusion/mc-dp-icons-assets) !)
+![new image in GIMP](imgs/new_image.gif)
+- Crop it according to the contents
+- Upscale it to a 32:1000 ratio
+- Save it somewhere
+![Crop, Scale & Save in GIMP](imgs/crop_scale_save.gif)
+- Convert it to an SVG, e.g with [png2svg](https://png2svg.com/)
+- Save the svg at `fileicons\imgs\<NAME>_file.svg`
+### Declare new icons
+Now, let's tell the extension when to display this SVG.
+- Head to `fileicons\mc-dp-icon-theme-default.json`
+- In the `iconDefinitions` field, add `"<NAME>_file": {"iconPath": "./imgs/<NAME>_file.svg"},`
+- In the `fileExtensions` field, add `"<NAME>/json": "<NAME>_file",`
+<br>You can follow these steps again to customize the icon of your custom resource folder.
+<br>Your theme file should look like this now:
+
+```json
+{
+  "iconDefinitions": {
+    "my_armor": {"iconPath": "./imgs/my_armor.svg"},
+    "my_armor_file": {"iconPath": "./imgs/my_armor_file.svg"},
+    ...
+  },
+  "file": "misc",
+  "folder": "folder",
+  "folderExpanded": "folder_open",
+  "folderNames": {
+    "data": "data",
+    "assets": "assets",
+    "src": "src"
+  },
+  "folderNamesExpanded": {
+    "my_armor": "my_armor",
+    ...
+  },
+  "fileExtensions": {
+    "my_armor/json": "my_armor_file",
+    ...
+  },
+  "fileNames": { ... },
+  "hidesExplorerArrows": ...
+}
+```
+
+You might also want to enable the `mc-dp-icons.enableSubfolderIcons` settings to, well, enable sub-folder icons.<br>
+## Credits
+Huge thanks to the [Beet team](https://github.com/mcbeet/beet/graphs/contributors) for making this possible in the first place<br>
+Thanks to the [Spyglass team](https://github.com/SpyglassMC/Spyglass/graphs/contributors) for making such a flexible datapack extension<br>
+Thanks to the [FuncFusion team](https://github.com/FuncFusion) for their datapack icons extension and their help for making this guide
