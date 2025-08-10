@@ -27,11 +27,12 @@ Always wanting to make my code as extensible as possible, I went on a journey to
 ### Create new icons
 We're now going to create the SVG files that the extension will display allongside our folder names. I'll be using [GIMP](https://www.gimp.org/downloads/)
 - Create a 32x32 pixel art (Consider taking inspiration from the [assets repo](https://github.com/FuncFusion/mc-dp-icons-assets) !)
-![new image in GIMP](gif/new_image.gif)
+<br><img src="gif/new_image.gif" width="40%" height="40%" alt="New Image"/>
 - Crop it according to the contents
 - Upscale it to a 32:1000 ratio
 - Save it somewhere
-![Crop, Scale & Save in GIMP](gif/crop_scale_save.gif)
+<br><img src="gif/crop_scale_save.gif" width="40%" height="40%" alt="Crop, scale & save"/>
+
 - Convert it to an SVG, e.g with [png2svg](https://png2svg.com/)
 - Save the svg at `fileicons\imgs\<NAME>_file.svg`
 ### Declare new icons
