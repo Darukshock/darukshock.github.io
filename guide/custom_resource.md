@@ -27,11 +27,11 @@ Always wanting to make my code as extensible as possible, I went on a journey to
 ### Create new icons
 We're now going to create the SVG files that the extension will display allongside our folder names. I'll be using [GIMP](https://www.gimp.org/downloads/)
 - Create a 32x32 pixel art (Consider taking inspiration from the [assets repo](https://github.com/FuncFusion/mc-dp-icons-assets) !)
-![new image in GIMP](imgs/new_image.gif)
+![new image in GIMP](gif/new_image.gif)
 - Crop it according to the contents
 - Upscale it to a 32:1000 ratio
 - Save it somewhere
-![Crop, Scale & Save in GIMP](imgs/crop_scale_save.gif)
+![Crop, Scale & Save in GIMP](gif/crop_scale_save.gif)
 - Convert it to an SVG, e.g with [png2svg](https://png2svg.com/)
 - Save the svg at `fileicons\imgs\<NAME>_file.svg`
 ### Declare new icons
@@ -70,8 +70,8 @@ Now, let's tell the extension when to display this SVG.
 }
 ```
 
-You might also want to enable the `mc-dp-icons.enableSubfolderIcons` settings to, well, enable sub-folder icons.<br>
-## Credits
-Huge thanks to the [Beet team](https://github.com/mcbeet/beet/graphs/contributors) for making this possible in the first place<br>
-Thanks to the [Spyglass team](https://github.com/SpyglassMC/Spyglass/graphs/contributors) for making such a flexible datapack extension<br>
-Thanks to the [FuncFusion team](https://github.com/FuncFusion) for their datapack icons extension and their help for making this guide
+You might also want to enable the `mc-dp-icons.enableSubfolderIcons` setting to, well, enable sub-folder icons.<br>
+## Thanks
+- [Beet team](https://github.com/mcbeet/beet/graphs/contributors) for making this possible in the first place<br>
+- [Spyglass team](https://github.com/SpyglassMC/Spyglass/graphs/contributors) for making such a flexible datapack extension<br>
+- [FuncFusion team](https://github.com/FuncFusion) for their datapack icons extension and their help for making this guide
