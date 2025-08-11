@@ -19,8 +19,15 @@ Always wanting to make my code as extensible as possible, I went on a journey to
     - Custom folder & file icons : [Datapack Icons](https://marketplace.visualstudio.com/items?itemName=SuperAnt.mc-dp-icons)
 
 ## Beet Plugin
-- extend namespace
-- iterate through items
+- Create folders
+- Write classes
+- Extend namespace
+- Iterate through items
+- Clear
+- Write to `pipeline` and `require` in `beet.json`
+
+Now upon running `beet` in your terminal, your plugin should process all of the custom resources !
+
 ## Spyglass
 This section will go through the steps on getting auto-completion & syntax checking for your custom resources.<br>
 It will have no effect if your custom resource doesn't use a JSON structure.<br>
