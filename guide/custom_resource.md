@@ -22,16 +22,30 @@ Always wanting to make my code as extensible as possible, I went on a journey to
 - extend namespace
 - iterate through items
 ## Spyglass
-- `spyglass.json`
+This section will go through the steps on getting auto-completion & syntax checking for your custom resources.<br>
+It will have no effect if your custom resource doesn't use a JSON structure.<br>
+- If not already, install the Spyglass extension and create `spyglass.json` in your workspace. [A default configuration can be found here.](https://spyglassmc.com/user/config.html#example-file)
 ```json
 {
-  "customResources": {
-    "darukshock.my_armor": "my_armor"
-  }
+    "env": {
+        ...
+        "customResources": {
+            "my_armor": { 
+                "category": "my_armor",
+                /// Your file extension
+                "ext": ".json",
+                /// "data" or "assets"
+                "pack": "data"
+            }
+        }
+    },
+    ...
 }
 ```
-- mcdoc
-
+- In your workspace, create a file with the `.mcdoc` extension.
+- Describe your resource's structure. [You can learn how to write mcdoc here](https://spyglassmc.com/user/mcdoc/).
+<br><img src="img/my_armor_mcdoc.png" width="69%" height="69%" alt="Mcdoc code"/>
+- Reload Visual Studio Code, you should now have syntax checks & auto completion.
 
 ## Custom File & Folder icons
 - Install the [Datapack Icons](https://marketplace.visualstudio.com/items?itemName=SuperAnt.mc-dp-icons) extension.
