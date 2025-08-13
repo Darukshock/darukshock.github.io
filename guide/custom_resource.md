@@ -19,7 +19,7 @@ Always wanting to make my code as extensible as possible, I went on a journey to
     - Custom folder & file icons : [Datapack Icons](https://marketplace.visualstudio.com/items?itemName=SuperAnt.mc-dp-icons)
 
 ## Beet Plugin
-- Create folders
+- In your beet workspace, create a python file.
 - Write classes
 - Extend namespace
 - Iterate through items
@@ -32,23 +32,8 @@ Now upon running `beet` in your terminal, your plugin should process all of the 
 This section will go through the steps on getting auto-completion & syntax checking for your custom resources.<br>
 It will have no effect if your custom resource doesn't use a JSON structure.<br>
 - If not already, install the Spyglass extension and create `spyglass.json` in your workspace. [A default configuration can be found here.](https://spyglassmc.com/user/config.html#example-file)
-```json
-{
-    "env": {
-        ...
-        "customResources": {
-            "my_armor": { 
-                "category": "my_armor",
-                /// Your file extension
-                "ext": ".json",
-                /// "data" or "assets"
-                "pack": "data"
-            }
-        }
-    },
-    ...
-}
-```
+<br><img src="img/my_armor_spyglass.png" width="69%" height="69%" alt="Spyglass config"/>
+
 - In your workspace, create a file with the `.mcdoc` extension.
 - Describe your resource's structure. [You can learn how to write mcdoc here](https://spyglassmc.com/user/mcdoc/).
 <br><img src="img/my_armor_mcdoc.png" width="69%" height="69%" alt="Mcdoc code"/>
@@ -77,33 +62,8 @@ Now, let's tell the extension when to display this SVG.
 <br>You can follow these steps again to customize the icon of your resource folder.
 <br>Your theme file should look like this now:
 
-```json
-{
-  "iconDefinitions": {
-    "my_armor": {"iconPath": "./imgs/my_armor.svg"},
-    "my_armor_file": {"iconPath": "./imgs/my_armor_file.svg"},
-    ...
-  },
-  "file": "misc",
-  "folder": "folder",
-  "folderExpanded": "folder_open",
-  "folderNames": {
-    "data": "data",
-    "assets": "assets",
-    "src": "src"
-  },
-  "folderNamesExpanded": {
-    "my_armor": "my_armor",
-    ...
-  },
-  "fileExtensions": {
-    "my_armor/json": "my_armor_file",
-    ...
-  },
-  "fileNames": { ... },
-  "hidesExplorerArrows": ...
-}
-```
+<br><img src="img/my_armor_icon.png" width="69%" height="69%" alt="Datapack Icons theme"/>
+
 
 You might also want to enable the `mc-dp-icons.enableSubfolderIcons` setting to, well, enable sub-folder icons.<br>
 ## Thanks
