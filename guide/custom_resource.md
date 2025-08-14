@@ -20,11 +20,18 @@ Always wanting to make my code as extensible as possible, I went on a journey to
 
 ## Beet Plugin
 - In your beet workspace, create a python file.
-- Write classes
-- Extend namespace
-- Iterate through items
-- Clear
-- Write to `pipeline` and `require` in `beet.json`
+<br><img src="img/custom_resource/py_file.png" width="69%" height="69%" alt="Beet config"/>
+- In it, write the following :
+<br><img src="img/custom_resource/plugin.png" width="74%" height="69%" alt="Beet plugin"/>
+- Adapt this code to your requirements.
+    - Edit the class that inherits from `BaseModel` to represent the structure of your file.
+    - Edit the class that inherits from `JsonFileBase[...]` for the desired folder path & extension
+    - Write your own logic to process `resource_location` and `file_instance`
+    - If your custom resource is located in the `assets` folder, replace the `ctx.data` with `ctx.assets`
+    - Rename the classes however you want
+- In `beet.json`, call the `extend_data_pack` method from the `require` field, and the main plugin in the `pipeline` field :
+<br><img src="img/custom_resource/beet.png" width="69%" height="69%" alt="Beet config"/>
+
 
 Now upon running `beet` in your terminal, your plugin should process all of the custom resources !
 
@@ -32,11 +39,11 @@ Now upon running `beet` in your terminal, your plugin should process all of the 
 This section will go through the steps on getting auto-completion & syntax checking for your custom resources.<br>
 It will have no effect if your custom resource doesn't use a JSON structure.<br>
 - If not already, install the Spyglass extension and create `spyglass.json` in your workspace. [A default configuration can be found here.](https://spyglassmc.com/user/config.html#example-file)
-<br><img src="img/my_armor_spyglass.png" width="69%" height="69%" alt="Spyglass config"/>
+<br><img src="img/custom_resource/spyglass.png" width="69%" height="69%" alt="Spyglass config"/>
 
 - In your workspace, create a file with the `.mcdoc` extension.
 - Describe your resource's structure. [You can learn how to write mcdoc here](https://spyglassmc.com/user/mcdoc/).
-<br><img src="img/my_armor_mcdoc.png" width="69%" height="69%" alt="Mcdoc code"/>
+<br><img src="img/custom_resource/mcdoc.png" width="69%" height="69%" alt="Mcdoc code"/>
 - Reload Visual Studio Code, you should now have syntax checks & auto completion.
 
 ## Custom File & Folder icons
@@ -46,11 +53,11 @@ It will have no effect if your custom resource doesn't use a JSON structure.<br>
 ### Create new icons
 We're now going to create the SVG files that the extension will display allongside our folder names. I'll be using [GIMP](https://www.gimp.org/downloads/)
 - Create a 32x32 pixel art (Consider taking inspiration from the [assets repo](https://github.com/FuncFusion/mc-dp-icons-assets) !)
-<br><img src="gif/new_image.gif" width="69%" height="69%" alt="New Image"/>
+<br><img src="img/custom_resource/new_image.gif" width="69%" height="69%" alt="New Image"/>
 - Crop it according to the contents
 - Upscale it to a 32:1000 ratio
 - Save it somewhere
-<br><img src="gif/crop_scale_save.gif" width="69%" height="69%" alt="Crop, scale & save"/>
+<br><img src="img/custom_resource/crop_scale_save.gif" width="69%" height="69%" alt="Crop, scale & save"/>
 
 - Convert it to an SVG, e.g with [png2svg](https://png2svg.com/)
 - Save the svg at `fileicons\imgs\<NAME>_file.svg`
@@ -62,9 +69,12 @@ Now, let's tell the extension when to display this SVG.
 <br>You can follow these steps again to customize the icon of your resource folder.
 <br>Your theme file should look like this now:
 
-<br><img src="img/my_armor_icon.png" width="69%" height="69%" alt="Datapack Icons theme"/>
+<br><img src="img/custom_resource/icon.png" width="69%" height="69%" alt="Datapack Icons theme"/>
 
-
+## Side notes
+- I recommend putting your beet plugins in a `plugins` folder for organization purposes.
+- Similarly, you could group your mcdoc files in a `mcdoc` folder.
+- If you encounter troubles following this guide, feel free to message me on discord : `@darukshock`
 You might also want to enable the `mc-dp-icons.enableSubfolderIcons` setting to, well, enable sub-folder icons.<br>
 ## Thanks
 - [Beet team](https://github.com/mcbeet/beet/graphs/contributors) for making this possible in the first place<br>
